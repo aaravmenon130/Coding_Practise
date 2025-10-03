@@ -24,9 +24,8 @@ Explanation: The array ans is formed as follows:
 
 class Solution:
     def getConcatenation(self, nums: List[int]) -> List[int]:
-        n = len(nums)
-        new_len = 2*n
         ans = nums
-        for i in range(n, new_len):
-            ans.append(ans[i-n])
+        n = len(nums)
+        for i in range(n):
+            ans.append(nums[i])
         return ans
