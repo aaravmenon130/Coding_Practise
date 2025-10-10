@@ -21,10 +21,10 @@ n == nums.length
 '''
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        n = len(nums)
-        req = n/2
-        d = defaultdict(int)
-        for i in range(n):
-            d[nums[i]] += 1
-            if d[nums[i]] > req:
-                return nums[i]
+        s = set(nums)
+        m = list(s)
+        arr = []
+        for i in s:
+            arr.append(nums.count(i))
+        l = arr.index(max(arr))
+        return m[l]
